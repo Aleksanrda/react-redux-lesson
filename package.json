@@ -17,7 +17,10 @@
   "setupFiles": ["./test/jestsetup.js"],
   "snapshotSerializers": [
     "<rootDir>/node_modules/enzyme-to-json/serializer"
-  ]
+  ],
+  "moduleNameMapper": {
+    "^.+\\.(css|scss)$": "identity-obj-proxy"
+  }
 },
   "eslintConfig": {
     "extends": "react-app"
