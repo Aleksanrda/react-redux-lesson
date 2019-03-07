@@ -3,25 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "react-scripts": "2.1.5"
   },
   "scripts": {
-  "test": "jest",
-  "test:watch": "jest --watch",
-  "test:coverage": "jest --coverage"
-},
-"jest": {
-  "setupFiles": ["./test/jestsetup.js"],
-  "snapshotSerializers": [
-    "<rootDir>/node_modules/enzyme-to-json/serializer"
-  ],
-  "moduleNameMapper": {
-    "^.+\\.(css|scss)$": "identity-obj-proxy"
-  }
-},
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
