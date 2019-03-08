@@ -1,3 +1,5 @@
+import { createStore } from 'redux'
+
 function counter(state, action){
 if(typeof state === 'undefined')
 {
@@ -18,22 +20,26 @@ return 0;
     }
 }
 
-// expect(
-// counter(0, {type: "Increment"})
-// ).toEqual(1);
+//const {createStore} = Redux; error
+const store = createStore(counter);
 
-// expect(
-// counter(1, {type: "Increment"})
-// ).toEqual(2);
+const render = () => {
+  document.body.innerText = store.getState();
+}
 
-// expect(
-// counter(2, {type: "Decrement"})
-// ).toEqual(1);
+store.subscribe(render);
+render();
 
-// expect(
-// counter(1, {type: "Decrement"})
-// ).toEqual(0);
-
+document.addEventListener('click', () => 
+{
+  store.dispatch({type : "Increment"})
+}
+)
+// console.log(store.getState());
+// store.dispatch({type: "Increment"})
+// console.log(store.getState());
+// store.dispatch({type: "Increment"})
+// console.log(store.getState());
 console.log('Tests passed!');
 
 it('should return 1 if state is 0 action Increment', () => {
